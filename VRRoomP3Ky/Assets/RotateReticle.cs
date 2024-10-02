@@ -5,7 +5,7 @@ using UnityEngine;
 public class RotateReticle : MonoBehaviour
 {
 
-    private float rotationSpeed = 1;
+    public float rotationSpeed = 10;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +15,7 @@ public class RotateReticle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(Vector3.up * Time.deltaTime * rotationSpeed);
+        if (this.gameObject.activeSelf)
+        transform.Rotate(Vector3.up);
     }
 }

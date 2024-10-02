@@ -13,7 +13,10 @@ public class ClockScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Debug.Log(DateTime.Now);
+        secondHand.transform.rotation = Quaternion.Euler((Now.Second * 6) + 90, 0, -90);
+        minuteHand.transform.rotation = Quaternion.Euler((Now.Minute * 6) + 90, 0, -90);
+        hourHand.transform.rotation = Quaternion.Euler((Now.Hour * 30) + 90, 0, -90);
     }
 
     // Update is called once per frame
@@ -25,6 +28,8 @@ public class ClockScript : MonoBehaviour
     private void FixedUpdate()
     {
         // Each minute and second makes 6 degrees
-        
+        secondHand.transform.Rotate(0, 0.12f, 0);
+        minuteHand.transform.Rotate(0, 0.002f, 0);
+        hourHand.transform.Rotate(0, 0.000033333333f, 0);
     }
 }
