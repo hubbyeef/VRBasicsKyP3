@@ -13,9 +13,8 @@ public class RotateReticle : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        if (this.gameObject.activeSelf)
-        transform.Rotate(Vector3.up);
+        transform.RotateAround(new Vector3(0f, this.transform.position.y, 0f), this.transform.position.y);
     }
 }
