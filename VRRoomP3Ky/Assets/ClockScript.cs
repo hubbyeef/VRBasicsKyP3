@@ -27,6 +27,7 @@ public class ClockScript : MonoBehaviour
 
     private void FixedUpdate()
     {
+        // FixedUpdate is called 50 times a second.
         // Each minute and second makes 6 degrees
         secondHand.transform.Rotate(0, 0.12f, 0);
         minuteHand.transform.Rotate(0, 0.002f, 0);
