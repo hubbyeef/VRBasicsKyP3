@@ -19,7 +19,7 @@ public class ClockScript : MonoBehaviour
         hourHand.transform.rotation = Quaternion.Euler((Now.Hour * 30) + 90, 0, -90);
     }
 
-    // Update is called once per frame
+    // jason you should kill yourself you dont deserve life or love
     void Update()
     {
         
