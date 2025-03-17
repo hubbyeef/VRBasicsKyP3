@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 /// <summary>
 /// Move an object using velocity
@@ -8,6 +9,7 @@ public class MoveWithVelocity : MonoBehaviour
 {
     [Tooltip("The speed at which the object is moved")]
     public float speed = 1.0f;
+    public Slider slider;
 
     [Tooltip("Controls the direction of movement")]
     public Transform origin = null;
@@ -20,8 +22,14 @@ public class MoveWithVelocity : MonoBehaviour
         rigidBody = GetComponent<Rigidbody>();
     }
 
+    private void Start()
+    {
+        slider.value = 5;
+    }
+
     private void FixedUpdate()
     {
+        speed = slider.value;
         ApplyVelocity();
     }
 
@@ -53,5 +61,10 @@ public class MoveWithVelocity : MonoBehaviour
     {
         if (!origin)
             origin = transform;
+    }
+
+    public void SetSpeed(float newSpeed)
+    {
+        speed = slider.value;
     }
 }
